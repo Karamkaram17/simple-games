@@ -46,7 +46,7 @@ function choise(id) {
       oWins++;
       o.innerHTML = "O: " + oWins + " Wins";
     }
-    btns.innerHTML = `<button class="btn btn-dark" onclick="Restart()" >Restart</button> <button onclick="reset()" class="btn btn-dark" >Reset</button> `;
+    btns.innerHTML = `<button class="btn btn-dark" onclick="Restart()" >Play Again</button> <button onclick="reset()" class="btn btn-dark" >Reset</button> `;
   }
   if (checkForWin() === false) {
     endGame = true;
@@ -56,7 +56,7 @@ function choise(id) {
     result.innerHTML = "Tie !";
     tWins++;
     t.innerHTML = "Tie: " + tWins;
-    btns.innerHTML = `<button class="btn btn-dark" onclick="Restart()" >Restart</button> <button class="btn btn-dark" onclick="reset()" >Reset</button> `;
+    btns.innerHTML = `<button class="btn btn-dark" onclick="Restart()" >Play Again</button> <button class="btn btn-dark" onclick="reset()" >Reset</button> `;
   }
 }
 
