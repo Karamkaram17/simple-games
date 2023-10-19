@@ -27,6 +27,7 @@ function choise(id) {
   }
   c.innerHTML = `${current === "X" ? "O" : "X"}'s Turn`;
   const target = document.querySelector(`#d${id}`);
+  if (target.innerHTML) return;
   if (!choices[id - 1]) {
     target.innerHTML = choice;
     target.classList.add("disabled");
