@@ -56,6 +56,31 @@ function computerMove(player) {
   // Define the opponent's symbol
   const opponent = player === "X" ? "O" : "X";
 
+  //check for first move
+  let opponentChoiceCount = 0;
+  for (let i = 0; i < choices.length; i++) {
+    if (choices[i] === opponent) {
+      opponentChoiceCount++;
+    }
+  }
+
+  //check if first move of oponent is a corner
+  if (
+    opponentChoiceCount === 1 &&
+    [0, 2, 6, 8].some((v) => choices[v] === opponent)
+  ) {
+    const indexOfOpopent = choices.indexOf(opponent);
+    if (indexOfOpopent === 0) {
+      return 8;
+    } else if (indexOfOpopent === 2) {
+      return 6;
+    } else if (indexOfOpopent === 6) {
+      return 2;
+    } else if (indexOfOpopent === 8) {
+      return 0;
+    }
+  }
+
   // Check for a winning move
   for (let i = 0; i < choices.length; i++) {
     if (choices[i] === "") {
